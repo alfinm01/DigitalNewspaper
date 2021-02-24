@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from flask_cors import CORS
 from datetime import datetime, timedelta
 import requests
 import json
@@ -6,7 +7,7 @@ import os
 import env
 
 app = Flask(__name__)
-
+CORS(app)
 
 @app.errorhandler(404)
 def page_not_found(e):
